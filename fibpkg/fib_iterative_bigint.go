@@ -12,8 +12,8 @@ func FibIterativeBigint(n uint32) *big.Int {
 	f2 := big.NewInt(0)
 	for i := uint32(0); i < n; i++ {
 		f2.Add(f0, f1)
-		f0 = f1
-		f1 = f2
+		f0.Set(f1)
+		f1.Set(f2)
 	}
 	return f0
 }
